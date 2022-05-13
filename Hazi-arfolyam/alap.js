@@ -1,23 +1,27 @@
-fetch("https://api.exchangerate-api.com/v4/latest/USD")
+fetch("https://api.exchangerate-api.com/v4/latest/" + Kattintas(ertek))
 .then(x => x.json())
 .then(y => megjelenit(y));
+
+function Kattintas() {
+    var ertek = adatok.rates;
+}
+document.getElementById("bevitel").value;
+
 
 function megjelenit(adatok){
     console.log(adatok)
     tomb=adatok;
     var sz = '';
-    for (var elem of adatok.rates) {
+    //for (var elem of adatok) {
        sz+='<div class="col-sm-3">'
-       sz+='<p>'+elem+'</p>'
+       sz+='<p>'+adatok.rates.HUF+'</p>'
        sz+='</div>'
 
+
         
-    }
-    document.getElementById("#usd_huf").innerHTML=sz;
+    //}
+    document.getElementById("usd_huf").innerHTML=sz;
     
-
-
-
 }
 
 
